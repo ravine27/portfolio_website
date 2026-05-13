@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiet Visionary | Projects Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;family=Space+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#292931",
+            "surface-container-lowest": "#0d0e14",
+            "surface-bright": "#383940",
+            "on-surface": "#e3e1eb",
+            "on-secondary-container": "#ffb86c",
+            "secondary-container": "#794700",
+            "on-tertiary-fixed": "#001f25",
+            "error-container": "#93000a",
+            "on-primary-container": "#4e2484",
+            "secondary-fixed": "#ffdcbc",
+            "surface-variant": "#33343c",
+            "primary-fixed-dim": "#d7baff",
+            "surface-container-highest": "#33343c",
+            "on-tertiary": "#00363e",
+            "primary": "#d7baff",
+            "on-surface-variant": "#ccc3d3",
+            "on-secondary": "#492900",
+            "tertiary-fixed": "#a3eeff",
+            "on-secondary-fixed": "#2c1600",
+            "on-tertiary-container": "#00434d",
+            "on-primary": "#411478",
+            "surface-dim": "#12131a",
+            "on-primary-fixed-variant": "#593090",
+            "tertiary-fixed-dim": "#75d4e8",
+            "primary-container": "#bd93f9",
+            "surface-container-low": "#1a1b22",
+            "inverse-primary": "#714aaa",
+            "surface-tint": "#d7baff",
+            "on-tertiary-fixed-variant": "#004e5a",
+            "secondary": "#ffb86c",
+            "primary-fixed": "#eddcff",
+            "surface-container": "#1e1f26",
+            "surface": "#12131a",
+            "outline": "#968e9c",
+            "on-error": "#690005",
+            "inverse-surface": "#e3e1eb",
+            "tertiary-container": "#53b4c7",
+            "on-background": "#e3e1eb",
+            "inverse-on-surface": "#2f3037",
+            "secondary-fixed-dim": "#ffb86c",
+            "error": "#ffb4ab",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#4a4451",
+            "on-primary-fixed": "#290055",
+            "background": "#12131a",
+            "tertiary": "#75d4e8",
+            "on-secondary-fixed-variant": "#683c00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "16px",
+            "container-max": "1280px",
+            "gutter": "24px",
+            "margin-desktop": "64px",
+            "unit": "8px"
+          },
+          "fontFamily": {
+            "body-lg": ["Hanken Grotesk"],
+            "label-sm": ["Space Mono"],
+            "headline-md": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "body-md": ["Hanken Grotesk"],
+            "headline-lg-mobile": ["Playfair Display"]
+          },
+          "fontSize": {
+            "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+            "display-lg": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #12131a;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(41, 41, 49, 0.1);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(117, 212, 232, 0.1);
+    }
+    .glow-hover:hover {
+      box-shadow: 0 0 30px rgba(255, 184, 108, 0.2);
+      border-color: rgba(255, 184, 108, 0.4);
+    }
+    .lantern {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 184, 108, 0.08) 0%, rgba(18, 19, 26, 0) 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .spark-active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      background-color: #ffb86c;
+      border-radius: 9999px;
+      box-shadow: 0 0 8px #ffb86c;
+    }
+  </style>
+</head>
+
+
+<body class="text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Floating Lantern Background Effects -->
+<div class="lantern top-[-100px] left-[-100px]"></div>
+<div class="lantern bottom-[10%] right-[-150px]" style="background: radial-gradient(circle, rgba(215, 186, 255, 0.05) 0%, rgba(18, 19, 26, 0) 70%);"></div>
+<!-- Header Placeholder -->
+<div id="header-container"></div>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Portfolio Exhibit</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface">Manifesting the <br/><span class="text-primary italic">Invisible.</span></h1>
+<p class="max-w-2xl font-body-lg text-body-lg text-on-surface-variant">
+          A curated collection of digital experiences, where structural integrity meets ethereal aesthetics. Every project is an exploration of form, light, and purpose.
+        </p>
+</div>
+</header>
+<!-- Project Filters -->
+<section class="mb-12">
+<div class="flex flex-wrap gap-4 items-center border-b border-outline-variant/10 pb-6">
+<button class="px-6 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-widest">All Work</button>
+<!-- <button class="px-6 py-2 rounded-full hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase tracking-widest text-outline">Web Apps</button>
+<button class="px-6 py-2 rounded-full hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase tracking-widest text-outline">Mobile</button>
+<button class="px-6 py-2 rounded-full hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase tracking-widest text-outline">UI/UX</button> -->
+</div>
+</section>
+<!-- Projects Grid (Asymmetric Bento-inspired layout) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Featured Project -->
+<div class="md:col-span-8 group">
+<div class="glass-card glow-hover rounded-xl overflow-hidden transition-all duration-500">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="A sophisticated dark mode dashboard design featuring abstract glassmorphism elements, vibrant neon purple gradients, and high-fidelity UI components. The scene is lit by soft, ethereal moonlight effects creating deep shadows and glowing highlights, reflecting a premium digital experience aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe12iHqsLn4MsVBkYW4e5yQVE5oKQv2vj4ZJck-T4sfP9ke6X5J5BFzBTX-8yIR-5W0DgacReW7mJzGYxW5txbCNPhKgg4YnbU-44Dhbmp3rK74BMlKTNmAOt38hEsJmxV88eILnVUTH8f-zrbFNOLiQ4MJThHNsxBrTM6TrOIpDlXxuiTiiqCyIeplVt7mX_3JTsyB_oa1lgJ_v-K6tnCxh53nP3IxPcIftDuH7cLuZyZMLMsekNcTAS9FzDxGKLmrv3Tfu8nbPVz"/>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/20">
+<span class="font-label-sm text-[10px] text-tertiary uppercase">Web App</span>
+</div>
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Lunar Intelligence Interface</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mb-6">
+              A complex data visualization platform built for celestial research, focusing on heavy blur effects and tactile lighting to reduce visual fatigue during night-time operations.
+            </p>
+<a class="inline-flex items-center gap-2 font-label-sm text-label-sm text-primary group-hover:gap-4 transition-all" href="#">
+              VIEW CASE STUDY <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Side Project 1 -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="glass-card glow-hover rounded-xl overflow-hidden transition-all duration-500 group">
+<div class="relative aspect-square overflow-hidden">
+<img class="w-full h-full object-cover opacity-50 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="An ethereal mobile application interface showing a meditation timer with soft glowing pulses. The background is a deep midnight blue with floating lanterns and soft mist, creating a peaceful and spiritual atmospheric design for a modern wellness brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFhBi-fM7aqj33QHQPLwz6RsRcV0KCieKwnp_DuSADjCEuo66Ss-YJi2tBzsDbctW2BOrAOJ8ElpIfPocpgAgnyVk8g5c8YMUyBrH3UH-Sr-9SPVwBs9mp3AgWLRMSueORFvxmgMlq7lGNNweZfLjbICeMum0q5vFuXWuz601PUini0jJhDHNJ-98-e68NMeTM-Dj7UW4RgGDW1yGZynC25b35Gq0I6grGTR1eCErSTigUG4NSJD53S5vZYDxAunuHTOIokk-tdcuR"/>
+</div>
+<div class="p-6">
+<div class="mb-2">
+<span class="font-label-sm text-[10px] text-secondary uppercase tracking-widest">Mobile</span>
+</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-2">Mist Meditation App</h3>
+<p class="font-body-md text-sm text-on-surface-variant">
+              A minimalist wellness app focusing on rhythmic light patterns to guide deep breathing exercises.
+            </p>
+</div>
+</div>
+<div class="glass-card glow-hover rounded-xl overflow-hidden transition-all duration-500 group">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover opacity-50 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close-up of a high-end UI design system library featuring translucent glass cards, crisp typography, and subtle glowing borders. The aesthetic is futuristic and clean, using a palette of deep charcoal and soft lavender accents under soft gallery-style lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFJynCroRW16noNOs5MEqsYmWkdWu9mJIgDa1H861U0IdkIjiA9PMI3iAMM8f94xZwsKuiJ9G1qzViSoL12hKRBNTk3Tb_dMV9TEcTXkEKyEwSZxFJnhs_L-wbNt9AFEBqEnmCykwd8hia2LhMgC5AWfQAzCr1jXaxnfLbzYM7eL5th-gTE4fAowXwIl1VAL-BwcHHSRHLfTKCd0wEszGLsD9X5WQdDnzaMjwy2PpNhnAseGbzfAJgN92z1DeqdXB3t6r3ID_PH133"/>
+</div>
+<div class="p-6">
+<div class="mb-2">
+<span class="font-label-sm text-[10px] text-tertiary uppercase tracking-widest">UI/UX</span>
+</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-2">Ether Design System</h3>
+<p class="font-body-md text-sm text-on-surface-variant">
+              A comprehensive library of components designed for the 'Quiet Visionary' aesthetic, optimized for performance.
+            </p>
+</div>
+</div>
+</div>
+<!-- Project 3 - Vertical -->
+<div class="md:col-span-4 group">
+<div class="glass-card glow-hover rounded-xl overflow-hidden h-full transition-all duration-500">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover opacity-50 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A vintage technology display with a modern twist, featuring a glowing retro monitor showing futuristic code. The scene is atmospheric with soft blue and amber light reflecting off metallic surfaces in a dark, quiet workspace. The mood is nostalgic yet advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmxwg4e-_YZbE2NffDq2vR4-MEHIX928EU0KwIBogKpIbb0CxfTHfUaK9J-jcp5Tj4AKclE7etzgtfLfLf46Q-GUIllGggV71EzOO0wmG2b3WvUc96fZV8JruDJIWGqCHQmXq9NfjegQTkvSLNBCFztD-4Lk52A4NCRlb5YUgMMWnk8A8lEJfKaOaVmdISPGUh4pzCungw7FEnV2zGBPqax3X01WjTre2zCDj0YiW1NDexjt1uaVgPrnqNDPhOnUAYKmDlxKEQnfDI"/>
+</div>
+<div class="p-6">
+<div class="mb-2">
+<span class="font-label-sm text-[10px] text-primary uppercase tracking-widest">Web App</span>
+</div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-2">Retro-Sync Engine</h3>
+<p class="font-body-md text-sm text-on-surface-variant">
+              Bridging legacy hardware with modern cloud architectures through a bespoke ethereal dashboard.
+            </p>
+</div>
+</div>
+</div>
+<!-- Project 4 - Wide -->
+<div class="md:col-span-8 group">
+<div class="glass-card glow-hover rounded-xl overflow-hidden transition-all duration-500">
+<div class="relative aspect-[21/9] overflow-hidden">
+<img class="w-full h-full object-cover opacity-50 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A panoramic view of a digital galaxy with glowing data points connected by thin lines of light. The visual style is deep-space atmospheric, with a palette of indigo, teal, and soft gold. It looks like a high-end data mapping visualization tool for complex networks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRSc-WREYhssmi9FjSCKncGQ8RT6aNbWLyCuGwKlmFWM9leoaHVCwFedFFWBhdCMV1TQUIPzZsGJ8cLMXMsPokN7sX0bkVMUKTHLXRlUNkX48Yr4PFTmYo-jSznikygq7g7Avx7AzcQEfwTJj8W80UF1hmwSI6SDUz6ubXLR6X2ia5aHTDcyUrqLq83r0FDHRGiteitIFKsEAUpShqlXawK3lJKelWWj6OBb07ReLRDn-f-J4fR4kzXFmtjjzF7Gr51Huqvm4MUu1s"/>
+</div>
+<div class="p-8 flex flex-col md:flex-row justify-between items-end gap-6">
+<div>
+<div class="mb-2">
+<span class="font-label-sm text-[10px] text-secondary uppercase tracking-widest">Web App</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Orion Network Mapper</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+                Real-time mapping of global infrastructure nodes using generative art techniques to represent server load.
+              </p>
+</div>
+<button class="px-8 py-3 bg-surface-container-high border border-outline-variant/30 text-on-surface rounded-lg hover:border-primary transition-all font-label-sm uppercase tracking-tighter">
+              Explore Tech
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="mt-32 p-12 glass-card rounded-2xl text-center relative overflow-hidden">
+<div class="lantern absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 w-full h-full" style="background: radial-gradient(circle, rgba(117, 212, 232, 0.2) 0%, rgba(18, 19, 26, 0) 70%);"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">Have a vision in mind?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl mx-auto">
+          I'm always looking for ambitious projects that challenge the boundaries of web experiences.
+        </p>
+<button class="px-10 py-4 bg-primary text-on-primary font-bold rounded-xl hover:shadow-[0_0_20px_rgba(215,186,255,0.4)] transition-all active:scale-95">
+          START A CONVERSATION
+        </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/10 py-12 px-margin-mobile md:px-margin-desktop w-full">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-display-lg text-headline-md text-primary">Quiet Visionary</div>
+<p class="font-body-md text-body-md text-tertiary dark:text-tertiary-fixed-dim">© 2024 The Quiet Visionary. Hand-crafted in the mist.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all font-body-md text-body-md" href="#">LinkedIn</a>
+<a class="text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all font-body-md text-body-md" href="#">GitHub</a>
+<a class="text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all font-body-md text-body-md" href="#">Dribbble</a>
+<a class="text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all font-body-md text-body-md" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+<script>
+  // Load header from separate file
+  fetch('./header.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('header-container').innerHTML = html;
+      // Set active link for current page
+      const workLink = document.getElementById('nav-work');
+      if (workLink) {
+        workLink.classList.add('relative', 'text-secondary', 'spark-active');
+        workLink.classList.remove('opacity-70');
+      }
+    });
+</script>
+</body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>404 - Hide &amp; Seek Time!</title>
+<!-- Tailwind CSS CDN with forms and container-queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="typography">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .main-heading {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .sub-heading {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: #e5e7eb;
+    }
+  </style>
+<style data-purpose="kinetic-typography">
+    /* 
+      This animation simulates the scrolling "ribbon" effect seen in the image.
+      The marquee moves vertically to create a sense of motion.
+    */
+    @keyframes scrollVertical {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+
+    .ribbon-container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+    }
+
+    .ribbon-text-wrapper {
+      display: flex;
+      flex-direction: column;
+      animation: scrollVertical 15s linear infinite;
+    }
+
+    .ribbon-text {
+      font-size: clamp(4rem, 10vw, 6rem);
+      font-weight: 800;
+      line-height: 0.9;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+
+    /* Distorted effect for the "S" curve shape simulated via perspective and skew */
+    .perspective-box {
+      perspective: 1000px;
+    }
+
+    .distorted-ribbon {
+      transform: rotateY(-25deg) rotateX(10deg) skewY(-5deg);
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+    }
+
+    /* Specific styles for the "NOT FOUND" alternating layout */
+    .text-grey {
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body class="bg-black text-white h-screen flex items-center justify-center p-8 md:p-24">
+<!-- BEGIN: MainContent -->
+<main class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl" data-purpose="page-layout">
+<!-- BEGIN: TextSection -->
+<section class="flex flex-col space-y-8" data-purpose="error-message">
+<div>
+<h1 class="main-heading font-bold mb-8">
+          Hide &amp;<br/>Seek Time!
+        </h1>
+<p class="sub-heading font-normal">
+          And that's it!<br/>
+          Oops! The page you're looking for doesn't exist.
+        </p>
+</div>
+<div class="pt-12 hidden lg:block">
+<!-- Spacer for desktop layout to push button down to match image alignment -->
+</div>
+</section>
+<!-- END: TextSection -->
+<!-- BEGIN: GraphicSection -->
+<section class="relative h-[400px] lg:h-[600px] flex justify-center items-center perspective-box" data-purpose="kinetic-graphic">
+<div class="ribbon-container distorted-ribbon w-full max-w-md">
+<div class="ribbon-text-wrapper">
+<!-- Repeated content for seamless loop -->
+<div class="ribbon-text text-grey text-left">NOT</div>
+<div class="ribbon-text text-white text-right">FOUND</div>
+<div class="ribbon-text text-white text-right">PAGE</div>
+<div class="ribbon-text text-white text-right">NOT</div>
+<div class="ribbon-text text-grey text-left">FOUND</div>
+<div class="ribbon-text text-grey text-left">PAGE</div>
+<div class="ribbon-text text-white text-right">FOUND</div>
+<div class="ribbon-text text-white text-right">PAGE</div>
+<div class="ribbon-text text-white text-right">NOT</div>
+<!-- Repeat -->
+<div class="ribbon-text text-grey text-left">NOT</div>
+<div class="ribbon-text text-white text-right">FOUND</div>
+<div class="ribbon-text text-white text-right">PAGE</div>
+<div class="ribbon-text text-white text-right">NOT</div>
+<div class="ribbon-text text-grey text-left">FOUND</div>
+<div class="ribbon-text text-grey text-left">PAGE</div>
+<div class="ribbon-text text-white text-right">FOUND</div>
+<div class="ribbon-text text-white text-right">PAGE</div>
+<div class="ribbon-text text-white text-right">NOT</div>
+</div>
+</div>
+</section>
+<!-- END: GraphicSection -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: FooterAction -->
+<div class="fixed bottom-12 right-8 md:right-24" data-purpose="navigation">
+<a class="inline-block px-10 py-3 border border-white text-sm font-medium tracking-widest hover:bg-white hover:text-black transition-all duration-300 ease-in-out uppercase" data-purpose="home-button" href="/">
+      Go Back Home
+    </a>
+</div>
+<!-- END: FooterAction -->
+<!-- BEGIN: InteractionScript -->
+<script data-purpose="dynamic-hover-effects">
+    // Optional: Add subtle parallax or movement based on mouse position to the kinetic graphic
+    document.addEventListener('mousemove', (e) => {
+      const ribbon = document.querySelector('.distorted-ribbon');
+      if (ribbon) {
+        const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+        const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+        ribbon.style.transform = `rotateY(${xAxis - 25}deg) rotateX(${yAxis + 10}deg) skewY(-5deg)`;
+      }
+    });
+  </script>
+<!-- END: InteractionScript -->
+</body></html>
