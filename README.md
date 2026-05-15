@@ -1,4 +1,4 @@
-# Quiet Visionary | Radha Agarwal Portfolio
+# radha.exe | Radha Agarwal Portfolio
 
 A premium, interactive developer portfolio showcasing a fusion of creative design, intelligent systems, and robust full-stack engineering. Built with the modern React ecosystem, this portfolio leverages highly interactive 3D rendering and fluid animations to create a deeply immersive digital experience.
 
