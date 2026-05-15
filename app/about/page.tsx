@@ -7,7 +7,7 @@ export default function AboutPage() {
             <div className="relative p-2 glass-card rounded-2xl">
               <div className="overflow-hidden rounded-xl border border-primary/20">
                 <img
-                  className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-auto object-cover transition-all duration-700"
                   alt="A sophisticated professional portrait of a woman with an air of creative leadership"
                   src="/radha-photo1.jpg"
                 />
@@ -36,7 +36,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
+      {/* 
       <section className="bg-surface-container-low/50 py-24 mb-24 border-y border-outline-variant/10">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="text-center md:text-left">
@@ -56,7 +56,7 @@ export default function AboutPage() {
             <p className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Active Users</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
