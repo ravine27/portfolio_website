@@ -19,28 +19,6 @@ A premium, interactive developer portfolio showcasing a fusion of creative desig
 - **3D Graphics**: [Three.js](https://threejs.org/)
 - **Icons**: Devicon & Lucide React
 
-## 🚀 Getting Started
-
-To run this project locally:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/ravine27/portfolio_website.git
-   cd portfolio_website
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **View the application:**
-   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 📂 Project Structure
 
